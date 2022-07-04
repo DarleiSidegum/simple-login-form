@@ -1,19 +1,34 @@
+import { useForm } from "react-hook-form";
+
 export function Login() {
+  const { register, handleSubmit } = useForm();
+
+  function handleSignIn(data: any) {
+    console.log(data);
+  }
+
   return (
     <div className="min-h-screen bg-gray-900 flex flex-col items-center">
       <div className="w-full max-w-[1100px] flex items-center justify-center m-auto">
         <div className="p-8 bg-gray-700 border border-gray-500 rounded min-w-[340px]">
           <strong className="text-2xl mb-6 block">Bem Vindo de Volta!</strong>
-          <form className="flex flex-col gap-2 w-full">
+          <form
+            className="flex flex-col gap-2 w-full"
+            onSubmit={handleSubmit(handleSignIn)}
+          >
             <input
-              className="bg-gray-900 rounded px-5 h-14"
-              type="text"
-              placeholder="Seu nome completo"
-            />
-            <input
+              {...register("email")}
               className="bg-gray-900 rounded px-5 h-14"
               type="email"
+              name="email"
               placeholder="Digite seu e-mail"
+            />
+            <input
+              {...register("password")}
+              className="bg-gray-900 rounded px-5 h-14"
+              type="password"
+              name="password"
+              placeholder="Digite sua senha"
             />
             <button
               type="submit"
