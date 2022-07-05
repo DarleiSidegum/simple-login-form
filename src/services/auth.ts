@@ -18,3 +18,14 @@ export async function signInRequest(data: SignInRequestData) {
         }
     }
 }
+
+export async function recoverUserInformation() {
+    await delay();
+    return {
+        user: {
+            name: 'Darlei Sidegum',
+            email: 'darlei@gmail.com',
+            avatar_url: 'https://image.png',
+        }
+    }
+}
