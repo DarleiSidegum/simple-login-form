@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { parseCookies } from "nookies";
 import { getApiClient } from "../services/axios";
-export function Dashboard() {
+export default function Dashboard() {
   const { user } = useContext(AuthContext);
   useEffect(() => {
     // api.get("/users");
